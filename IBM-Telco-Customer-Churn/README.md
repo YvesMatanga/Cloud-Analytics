@@ -1,6 +1,6 @@
 # IBM Telco Customer Churn — Customer Retention Analytics
 
-An end-to-end machine-learning project for predicting customer churn, analysing customer retention drivers, and supporting data-driven retention decisions using the IBM Telco Customer Churn dataset.
+An end-to-end machine-learning project for predicting customer churn, analysing customer retention drivers, and supporting data-driven retention decisions using the IBM Telco Customer Churn dataset. <a href="https://your-demo-url.com" target="_blank">Click here for live demo </a>
 
 ## Project Overview
 
