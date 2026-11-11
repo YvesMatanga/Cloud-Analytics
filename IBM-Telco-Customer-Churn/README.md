@@ -65,7 +65,6 @@ The project considers several classification algorithms:
 - Logistic Regression
 - Decision Tree
 - Random Forest
-- Gradient Boosting
 - XGBoost
 - Neural Networks
 
