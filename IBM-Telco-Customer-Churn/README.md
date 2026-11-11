@@ -1,206 +1,66 @@
+
 # IBM Telco Customer Churn — Customer Retention Analytics
 
-An end-to-end machine-learning project for predicting customer churn, analysing customer retention drivers, and supporting data-driven retention decisions using the IBM Telco Customer Churn dataset. <a href="https://your-demo-url.com" target="_blank">Click here for live demo </a>
+An end-to-end data science project focused on predicting customer churn, understanding customer behaviour, and supporting data-driven retention strategies using the IBM Telco Customer Churn dataset.
 
-## Project Overview
+## 1. Project Overview
 
-IBM (International Business Machines Corporation) is a global technology company specialising in enterprise computing, software, cloud technologies, artificial intelligence, data and analytics, and consulting services.
+The IBM Telco Customer Churn dataset represents a fictional telecommunications company serving 7,043 customers in California.
 
-As part of its analytics resources, IBM provides the **Telco Customer Churn** sample dataset for demonstrating customer analytics and churn modelling.
+The dataset contains information about customer demographics, subscriptions, billing, account history and churn behaviour.
 
-The dataset represents a **fictional telecommunications company** providing home phone and Internet services to **7,043 customers in California**. It contains customer demographic, account, service, billing, satisfaction and behavioural information, together with indicators showing whether customers remained with or left the company.
+The project explores how machine learning can help telecommunications companies identify customers at risk of leaving and support targeted retention decisions.
 
-This project uses the dataset to develop an end-to-end customer retention analytics solution that moves beyond simply predicting churn toward understanding **which customers are at risk, why they are at risk, and how predictive insights can support retention decisions**.
+**Business question:**
 
----
+> Which customers are likely to leave, what factors contribute to their churn risk, and how can the company improve customer retention?
 
-## Business Problem
+## 2. Project Objectives
 
-Customer churn occurs when an existing customer stops using a company's products or services. High churn can negatively affect recurring revenue, customer lifetime value, acquisition efficiency, and long-term profitability.
+- Explore customer behaviour and identify patterns associated with churn.
+- Clean and preprocess customer data.
+- Develop and compare machine-learning classification models.
+- Predict customer-level churn probabilities.
+- Identify important factors influencing churn.
+- Segment customers into different churn-risk categories.
+- Support customer retention decisions using predictive insights.
+- Explore cloud deployment and MLOps using AWS.
 
-The central business question is:
+## 3. Dataset
 
-> **Which customers are most likely to churn, what factors are driving their churn risk, and how can these predictions support targeted customer retention strategies?**
+**Source:** IBM Telco Customer Churn
 
-From a machine-learning perspective, the primary task is a binary classification problem:
+**Customers:** 7,043
 
-\[
-Y =
-\begin{cases}
-1, & \text{Customer churns} \\
-0, & \text{Customer remains}
-\end{cases}
-\]
+**Target variable:** Churn (Yes/No)
 
-Given customer characteristics \(X\), the model estimates:
+The dataset includes:
 
-\[
-P(Y=1\mid X)
-=
-P(\text{Churn}\mid X)
-\]
+- **Demographics:** Gender, dependents and age-related information.
+- **Account information:** Tenure, contract type, payment method and billing.
+- **Services:** Internet, phone, technical support, online security and streaming services.
+- **Retention information:** Churn status and, depending on the dataset version, satisfaction scores, churn reasons and customer lifetime value.
 
-Rather than using this probability only for classification, the resulting churn propensity score can be incorporated into a broader customer decision-support process.
+The dataset is fictional and intended for educational and analytical purposes.
 
----
+## 4. Data Science Workflow
 
-## Project Objectives
+The analytical workflow consists of the following stages:
 
-The project aims to:
+1. Data understanding and exploration
+2. Data cleaning and preprocessing
+3. Exploratory data analysis (EDA)
+4. Feature engineering and selection
+5. Training, validation and testing
+6. Machine-learning model development
+7. Model evaluation and comparison
+8. Churn probability prediction
+9. Model explainability
+10. Customer retention decision support
 
-- Explore customer demographic, service, account and behavioural characteristics associated with churn.
-- Develop reproducible data-cleaning and feature-engineering pipelines.
-- Train and compare multiple machine-learning classification models.
-- Estimate customer-level churn probabilities.
-- Evaluate models using appropriate classification and ranking metrics.
-- Identify the most important drivers of customer churn.
-- Segment customers according to churn risk and customer characteristics.
-- Translate model predictions into actionable retention insights.
-- Extend churn prediction toward **next-best-action and retention decision support**.
-- Deploy the resulting ML solution using a cost-efficient AWS architecture.
-- Implement appropriate model monitoring and MLOps practices.
+## 5. Machine-Learning Models
 
----
-
-## Dataset
-
-The IBM Telco Customer Churn dataset contains information on **7,043 fictional telecommunications customers**.
-
-The available information includes:
-
-### Customer Demographics
-
-Examples include:
-
-- Gender
-- Age-related information
-- Dependents
-- Partner status
-
-### Account Information
-
-Examples include:
-
-- Customer tenure
-- Contract type
-- Payment method
-- Paperless billing
-- Monthly charges
-- Total charges
-
-### Services
-
-Customer subscriptions include services such as:
-
-- Phone service
-- Internet service
-- Multiple lines
-- Online security
-- Online backup
-- Device protection
-- Technical support
-- Streaming TV
-- Streaming movies
-
-### Customer Retention Information
-
-Depending on the version of the IBM dataset, retention-related information may include:
-
-- Churn status
-- Churn score
-- Satisfaction score
-- Customer Lifetime Value (CLTV)
-- Churn reason/category
-
-The primary target variable for the predictive modelling component is:
-
-**Churn**
-
----
-
-## Analytical Workflow
-
-The project follows an end-to-end data-science lifecycle:
-
-```text
-Customer Data
-      |
-      v
-Data Understanding
-      |
-      v
-Data Cleaning
-      |
-      v
-Exploratory Data Analysis
-      |
-      v
-Feature Engineering
-      |
-      v
-Train / Validation / Test
-      |
-      v
-Model Development
-      |
-      v
-Model Evaluation
-      |
-      v
-Churn Propensity Scores
-      |
-      v
-Model Explainability
-      |
-      v
-Customer Risk Segmentation
-      |
-      v
-Retention Decision Support
-```
-
----
-
-## Exploratory Data Analysis
-
-The exploratory analysis investigates relationships between churn and customer characteristics such as:
-
-- Contract type
-- Customer tenure
-- Monthly charges
-- Total charges
-- Internet service
-- Technical support
-- Payment method
-- Number of subscribed services
-- Customer demographics
-
-The objective is not only to visualise the data but also to identify potential behavioural and commercial patterns that can inform feature engineering and model development.
-
----
-
-## Data Preprocessing
-
-The preprocessing pipeline may include:
-
-- Missing-value analysis and treatment
-- Duplicate detection
-- Data-type correction
-- Categorical-variable encoding
-- Numerical feature scaling where required
-- Outlier investigation
-- Feature transformation
-- Feature selection
-- Prevention of target leakage
-- Train/validation/test separation
-
-Preprocessing transformations used during training will be incorporated into reproducible pipelines to ensure that identical transformations are applied during inference.
-
----
-
-## Machine-Learning Models
-
-The project will compare multiple classification approaches, potentially including:
+The project considers several classification algorithms:
 
 - Logistic Regression
 - Decision Tree
@@ -209,375 +69,138 @@ The project will compare multiple classification approaches, potentially includi
 - XGBoost
 - Neural Networks
 
-A simple interpretable model such as Logistic Regression will provide a baseline before more complex models are evaluated.
+Logistic Regression provides an interpretable baseline for comparison with more complex models.
 
----
+### Model Evaluation
 
-## Model Evaluation
+Model performance is assessed using appropriate classification metrics, including:
 
-Because business decisions depend on correctly identifying customers at risk, model evaluation will extend beyond classification accuracy.
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- ROC-AUC
+- Confusion matrix
 
-Metrics may include:
+The final model should balance predictive performance, interpretability and practical business usefulness.
 
-\[
-\text{Precision}
-\]
+## 6. Customer Churn Prediction
 
-\[
-\text{Recall}
-\]
-
-\[
-F_1
-\]
-
-\[
-ROC\text{-}AUC
-\]
-
-\[
-PR\text{-}AUC
-\]
-
-and the confusion matrix.
-
-Where customer-level probabilities are used for downstream decisions, probability calibration will also be considered.
-
-The final model will be selected based not only on predictive performance but also on interpretability, robustness and suitability for the intended business application.
-
----
-
-## Churn Propensity
-
-Instead of producing only a binary prediction, the model will generate a customer-level churn probability:
-
-\[
-P(\text{Churn}\mid X_i)
-\]
+The objective is to estimate the probability that an individual customer will leave the company.
 
 For example:
 
-```text
-Customer ID:       7590-VHVEG
-Churn Probability: 0.81
-Risk Level:        High
-```
+| Customer | Predicted Churn Risk | Risk Category |
+|---|---|---|
+| Customer A | 81% | High |
+| Customer B | 46% | Medium |
+| Customer C | 12% | Low |
 
-Customers can subsequently be grouped into operational risk categories such as:
+*Illustrative predictions only.*
 
-```text
-Low Risk
-Medium Risk
-High Risk
-```
+These predictions can help businesses prioritise customers for retention initiatives.
 
-This allows retention resources to be prioritised toward customers with elevated churn propensity.
+### Model Explainability
 
----
+Feature importance and explainability techniques such as SHAP can help identify factors associated with customer churn.
 
-## Model Explainability
+Examples of potential churn drivers include:
 
-Prediction alone does not answer the business question:
+- Month-to-month contracts
+- Short customer tenure
+- High monthly charges
+- Limited technical support
+- Payment methods
 
-> **Why is this customer considered at risk?**
+The importance of these factors must be established through the actual model results.
 
-Model explainability will therefore be incorporated using global feature importance and, where appropriate, local explanation techniques such as SHAP.
+## 7. Customer Retention Decision Support
 
-A customer-level explanation might conceptually resemble:
+Beyond predicting churn, the project aims to support practical customer retention decisions.
 
-```text
-Customer Churn Risk: 81%
+Potential applications include:
 
-Major contributing factors
---------------------------------
-Month-to-month contract
-Short customer tenure
-High monthly charges
-No technical support
-Electronic payment method
-```
+- Identifying high-risk customers.
+- Segmenting customers by churn probability.
+- Prioritising retention campaigns.
+- Recommending appropriate retention offers.
+- Incorporating customer lifetime value.
+- Evaluating the potential value of retention interventions.
 
-This allows predictions to be interpreted within a customer-retention context.
+The longer-term objective is to extend predictive analytics into a retention decision-support system.
 
----
+## 8. AWS Deployment and MLOps
 
-## Customer Retention Decision Support
+A cloud-based deployment is planned to demonstrate how the predictive model could be integrated into a practical application.
 
-The longer-term objective is to extend the predictive model from:
+### Proposed AWS Services
 
-\[
-\text{Prediction}
-\]
+| Service | Purpose |
+|---|---|
+| Amazon S3 | Dataset and model storage |
+| Amazon SageMaker | Model training and management |
+| AWS Lambda | Serverless application logic |
+| Amazon API Gateway | REST API access |
+| Amazon ECR | Container image storage |
+| Amazon CloudWatch | Logging and monitoring |
+| AWS IAM | Access and permissions |
 
-toward:
+### Planned MLOps Features
 
-\[
-\boxed{
-\text{Prediction}
-\rightarrow
-\text{Insight}
-\rightarrow
-\text{Decision}
-\rightarrow
-\text{Business Value}
-}
-\]
-
-The churn model can therefore serve as the predictive layer of a retention decision-support system.
-
-Future extensions may incorporate:
-
-- Customer segmentation
-- Offer eligibility rules
-- Retention incentives
-- Customer lifetime value
-- Offer-response propensity
-- Next-best-offer recommendations
-- Campaign budget constraints
-- Incremental value estimation
-- ROI optimisation
-
-For customer \(i\) and retention action \(j\), an expected-value framework can be represented conceptually as:
-
-\[
-EV_{ij}
-=
-P(\text{response}_{ij})V_i-C_{ij}
-\]
-
-where:
-
-- \(P(\text{response}_{ij})\) is the estimated probability of customer \(i\) responding to intervention \(j\),
-- \(V_i\) represents the estimated customer value,
-- \(C_{ij}\) represents the cost of the intervention.
-
-The resulting decision problem can then identify retention actions that maximise expected customer value while respecting operational or campaign constraints.
-
----
-
-## AWS Deployment Architecture
-
-The project is intended to demonstrate not only model development but also **cloud-based ML deployment and MLOps**.
-
-A cost-efficient AWS architecture is planned:
-
-```text
-                         User
-                           |
-                           v
-                    Web Dashboard
-                           |
-                           v
-                     API Gateway
-                           |
-                           v
-                       Lambda
-                           |
-                +----------+----------+
-                |                     |
-                v                     v
-          Churn Model          Decision Engine
-                |                     |
-                +----------+----------+
-                           |
-                           v
-                    Prediction/API
-
-
-                 ML DEVELOPMENT
-
-                    Amazon S3
-                        |
-                        v
-                Data Processing
-                        |
-                        v
-               SageMaker Training
-                        |
-                        v
-                Model Evaluation
-                        |
-                        v
-                 Model Registry
-                        |
-                        v
-                Model Artifact
-
-
-                 MLOps / DevOps
-
-GitHub --> CI/CD --> Docker --> Amazon ECR --> Deployment
-
-                         |
-                         v
-                    CloudWatch
-```
-
-The public demonstration is designed around serverless or usage-based services where practical to minimise idle infrastructure costs.
-
----
-
-## AWS Services
-
-The deployment may use:
-
-- **Amazon S3** — dataset and model-artifact storage
-- **Amazon SageMaker AI** — model training and ML lifecycle management
-- **AWS Lambda** — cost-efficient serverless inference/application logic
-- **Amazon API Gateway** — REST API exposure
-- **Amazon ECR** — Docker container storage
-- **Amazon CloudWatch** — logging and operational monitoring
-- **AWS IAM** — service permissions and access control
-
----
-
-## MLOps
-
-The production-oriented extension of the project will demonstrate:
-
-- Reproducible preprocessing
+- Reproducible data preprocessing
 - Model versioning
-- Model registration
-- Containerisation
+- Docker containerisation
 - Automated testing
-- CI/CD
-- Deployment
-- Logging
-- Model monitoring
-- Data/model drift analysis
-- Controlled model updates
+- CI/CD pipelines
+- Model deployment
+- Logging and monitoring
+- Model performance and drift monitoring
 
-The objective is to demonstrate the complete ML lifecycle rather than only model training inside a notebook.
+These components form part of the proposed production-oriented extension.
 
----
+## 9. Technology Stack
 
-## Technology Stack
+| Category | Technologies |
+|---|---|
+| Programming | Python |
+| Data Processing | Pandas, NumPy |
+| Machine Learning | scikit-learn, XGBoost |
+| Visualisation | Matplotlib, Power BI |
+| Explainability | SHAP |
+| Backend | Flask, REST APIs |
+| Cloud | AWS, SageMaker, S3, Lambda |
+| MLOps | Docker, GitHub Actions, CI/CD |
 
-**Data Science**
+Some technologies are intended for later development stages.
 
-`Python` · `Pandas` · `NumPy` · `scikit-learn` · `XGBoost`
+## 10. Project Roadmap
 
-**Visualisation**
-
-`Matplotlib` · `Power BI / React Dashboard`
-
-**Explainability**
-
-`SHAP`
-
-**Backend**
-
-`Python` · `Flask/REST API`
-
-**Cloud & MLOps**
-
-`AWS` · `SageMaker` · `S3` · `Lambda` · `API Gateway` · `ECR` · `CloudWatch`
-
-**DevOps**
-
-`Docker` · `GitHub Actions` · `CI/CD`
-
----
-
-## Repository Structure
-
-```text
-ibm-telco-retention/
-|
-|-- data/
-|   |-- raw/
-|   `-- processed/
-|
-|-- notebooks/
-|   |-- 01_data_understanding.ipynb
-|   |-- 02_eda.ipynb
-|   |-- 03_feature_engineering.ipynb
-|   `-- 04_model_development.ipynb
-|
-|-- src/
-|   |-- preprocessing.py
-|   |-- features.py
-|   |-- train.py
-|   |-- evaluate.py
-|   `-- inference.py
-|
-|-- decision_engine/
-|   |-- segmentation.py
-|   |-- offers.py
-|   `-- optimisation.py
-|
-|-- api/
-|   `-- app.py
-|
-|-- tests/
-|
-|-- docker/
-|   `-- Dockerfile
-|
-|-- .github/
-|   `-- workflows/
-|
-|-- requirements.txt
-|-- README.md
-`-- LICENSE
-```
-
----
-
-## Project Roadmap
-
-- [ ] Data acquisition and understanding
-- [ ] Exploratory data analysis
-- [ ] Data preprocessing
+- [ ] Data exploration and preprocessing
 - [ ] Feature engineering
-- [ ] Baseline modelling
-- [ ] Model comparison and tuning
-- [ ] Churn propensity scoring
+- [ ] Machine-learning model development
+- [ ] Model evaluation and comparison
+- [ ] Churn probability prediction
 - [ ] Model explainability
 - [ ] Customer risk segmentation
-- [ ] Retention decision engine
-- [ ] Next-best-offer extension
-- [ ] ROI/value optimisation
-- [ ] REST API
+- [ ] Retention decision-support system
+- [ ] REST API development
 - [ ] Docker containerisation
 - [ ] AWS deployment
-- [ ] CI/CD pipeline
-- [ ] Model monitoring
+- [ ] CI/CD and model monitoring
 - [ ] Interactive analytics dashboard
 
----
+## 11. Business Applications
 
-## Business Applications
-
-Although demonstrated using telecommunications customer data, the underlying analytical framework is transferable to customer-retention problems in:
+Although the project focuses on telecommunications, the analytical approach can be adapted to customer-retention problems in:
 
 - Banking and financial services
-- Retail
 - Insurance
+- Retail and e-commerce
 - Telecommunications
-- Subscription businesses
-- E-commerce
-- Transportation and mobility services
-- Loyalty and rewards programmes
+- Subscription-based businesses
 
-The general decision problem remains:
-
-\[
-\boxed{
-\text{Who is at risk?}
-\rightarrow
-\text{Why?}
-\rightarrow
-\text{What action should be taken?}
-\rightarrow
-\text{What value can the action generate?}
-}
-\]
-
----
+The central objective is to understand customer churn risk and use predictive insights to support better retention decisions.
 
 ## Disclaimer
 
-The IBM Telco Customer Churn dataset represents a **fictional telecommunications company** and is intended for analytical and educational purposes. The results of this project should therefore not be interpreted as findings about IBM's own customers or telecommunications operations.
-
-This repository is an independent data-science portfolio project and is not affiliated with or endorsed by IBM.
+The IBM Telco Customer Churn dataset describes a fictional telecommunications company. This is an independent data science portfolio project and is not affiliated with or endorsed by IBM.
