@@ -147,7 +147,7 @@ A cloud-based deployment is planned to demonstrate how the predictive model coul
 ### Planned MLOps Features
 
 - Reproducible data preprocessing
-- Model versioning
+- Model versioning using MLFlow
 - Docker containerisation
 - Automated testing
 - CI/CD pipelines
