@@ -137,6 +137,7 @@ A cloud-based deployment is planned to demonstrate how the predictive model coul
 | Service | Purpose |
 |---|---|
 | Amazon S3 | Dataset and model storage |
+| Amazon SageMaker Data Wrangler | Data Cleaning and Preprocessing |
 | Amazon SageMaker | Model training and management |
 | AWS Lambda | Serverless application logic |
 | Amazon API Gateway | REST API access |
